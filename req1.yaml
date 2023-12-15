@@ -14,7 +14,7 @@
                   
    - name: Apply new ACL to R2 Eth0/1 out
      ios_config:
-       parents: group REQ1
+       parents: int e0/1
        lines:
          - ip access-group REQ1 out
 
