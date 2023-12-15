@@ -10,7 +10,7 @@
        parents: ip access-list extended REQ2 
        lines:
          - permit icmp 192.168.20.0 0.0.0.255  host 192.168.10.10  echo-reply 
-         - permit icmp 192.168.20.20 host any echo-reply
+         - permit icmp 192.168.20.20 0.0.0.255 host any echo-reply
          - permit icmp any host any echo-reply
                   
    - name: Apply new ACL to R1 Eth0/1
