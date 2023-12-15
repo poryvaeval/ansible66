@@ -1,0 +1,30 @@
+---
+- name: Req1
+  hosts: R2
+  gather_facts: false
+  connection: network_cli
+ 
+  tasks:
+   - name: Load new ACL into device
+     ios_config:
+       parents: ip access-list extended REQ1 
+       lines:
+         - deny any
+         - permit any
+                  
+   - name: Apply new ACL to R2 Eth0/1 out
+     ios_config:
+       parents: group REQ1
+       lines:
+         - ip access-group REQ1 out
+
+   - name: Check result
+     ios_command:
+       commands: sh run | begin line REQ1
+     register: result
+     tags: show
+
+   - name: Print result
+     debug:
+       var: result.stdout_lines
+     tags: show
