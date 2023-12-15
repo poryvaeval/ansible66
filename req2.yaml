@@ -12,7 +12,7 @@
          - permit icmp 192.168.20.20 0.0.0.255 host 192.168.10.10  echo-reply 
          - permit icmp 192.168.20.20 0.0.0.255 any echo-reply
          - permit icmp any any echo-reply
-         - permit any any ip 
+         - permit ip any any  
                   
    - name: Apply new ACL to R1 Eth0/1
      ios_config:
