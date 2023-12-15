@@ -20,7 +20,7 @@
 
    - name: Check result
      ios_command:
-       commands: sh run | begin line REQ1
+       commands: sh access-lists
      register: result
      tags: show
 
