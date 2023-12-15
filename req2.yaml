@@ -14,7 +14,7 @@
          - permit icmp any any echo-reply
          - permit ip any any  
                   
-   - name: Apply new ACL to R1 Eth0/0.20
+   - name: Apply new ACL to R1 Eth0/0.20 in
      ios_config:
        parents: int e0/0.20
        lines:
